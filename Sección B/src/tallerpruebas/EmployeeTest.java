@@ -48,4 +48,41 @@ public class EmployeeTest {
 		assertEquals(sueldo,empleado3.cs(),DELTA);
 	}
 	*/
+	
+	@Test
+	public void testCYBWorker() {
+		Employee empleado = new Employee(1000, "USD", 0.10F, EmployeeType.Worker);
+		assertEquals(386F, empleado.CalculateYearBonus(), DELTA);
+	}
+	
+	@Test
+	public void testCYBWorkerNoUSD() {
+		Employee empleado = new Employee(1150, "EUR", 0.10F, EmployeeType.Worker);
+		assertEquals(386F, empleado.CalculateYearBonus(), DELTA);
+	}
+	
+	@Test
+	public void TestCYBSupervisor() {
+		Employee supervisor = new Employee(1300, "USD", 0.15F , EmployeeType.Supervisor);
+		assertEquals(1493F, supervisor.CalculateYearBonus(), DELTA);
+	}
+	
+	@Test
+	public void TestCYBSupervisorNoUSD() {
+		Employee supervisor = new Employee(1500, "EUR", 0.15F , EmployeeType.Supervisor);
+		assertEquals(1618F, supervisor.CalculateYearBonus(), DELTA);
+	}
+	
+	@Test
+	public void TestCYBManager() {
+		Employee manager = new Employee(2000, "USD", 0.2F, EmployeeType.Manager);
+		assertEquals(2386F, manager.CalculateYearBonus(), DELTA);
+	}
+	
+	@Test
+	public void TestCYBManagerNoUSD() {
+		Employee manager = new Employee(2250, "EUR", 0.2F, EmployeeType.Manager);
+		assertEquals(2523.5F, manager.CalculateYearBonus(), DELTA);
+	}
+	
 }
