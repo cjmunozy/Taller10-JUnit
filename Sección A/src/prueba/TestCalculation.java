@@ -6,7 +6,8 @@ import static org.junit.Assert.assertEquals;;
 public class TestCalculation {
 	@Test
 	public void testFindMax() {
-		assertEquals(4, Calculation.findMax(new int[] {1, 3, 4, 2}));
-		assertEquals(-1, Calculation.findMax(new int[] {-12, - 1, -3, -4, -2}));
+		assertEquals(10, Calculation.findMax(new int[] {1, 3, 4, 2, 10, 7}));
+		assertEquals(-1, Calculation.findMax(new int[] {-12, -8, -3, -1, -21}));
+		assertEquals(93, Calculation.findMax(new int[] {-1, -6, 0, 93, -5}));
 	}
 }
